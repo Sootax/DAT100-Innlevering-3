@@ -3,14 +3,12 @@ package no.hvl.dat100.oppgave1;
 import no.hvl.dat100.common.TODO;
 
 public abstract class Innlegg {
-	int id;
-	String bruker;
-	String dato;
-	int likes;
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
 
-	public Innlegg() {
-
-	}
+	public Innlegg() {}
 	
 	public Innlegg(int id, String bruker, String dato) {
 		this.id = id;
@@ -26,7 +24,7 @@ public abstract class Innlegg {
 	}
 	
 	public String getBruker() {
-		return this.bruker;
+		return bruker;
 	}
 
 	public void setBruker(String bruker) {
@@ -34,7 +32,7 @@ public abstract class Innlegg {
 	}
 
 	public String getDato() {
-		return this.dato;
+		return dato;
 	}
 
 	public void setDato(String dato) {
@@ -42,15 +40,15 @@ public abstract class Innlegg {
 	}
 
 	public int getId() {
-		return this.id;
+		return id;
 	}
 
 	public int getLikes() {
-		return this.likes;
+		return likes;
 	}
 	
 	public void doLike () {
-		this.likes++;
+		likes++;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
