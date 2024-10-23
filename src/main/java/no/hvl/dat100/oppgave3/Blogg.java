@@ -4,47 +4,64 @@ import no.hvl.dat100.common.TODO;
 import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
+	private Innlegg[] innleggsTabell;
+	private int nesteLedig;
 
-	// TODO: objektvariable 
-
-	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
-	}
+	public Blogg() {}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		this.innleggsTabell = new Innlegg[lengde];
+		this.nesteLedig = 0;
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		return nesteLedig;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return innleggsTabell;
 	}
-	
-	public int finnInnlegg(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+	public int finnInnlegg(Innlegg innlegg) {
+		for (int i = 0; i < nesteLedig; i++) {
+			if (innleggsTabell[i] != null && innleggsTabell[i].getId() == innlegg.getId()) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < nesteLedig; i++) {
+			if (innleggsTabell[i] != null && innleggsTabell[i].getId() == innlegg.getId()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return nesteLedig < innleggsTabell.length;
 	}
-	
+
 	public boolean leggTil(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		if (nesteLedig < innleggsTabell.length && !finnes(innlegg)) {
+			innleggsTabell[nesteLedig++] = innlegg;
+			return true;
+		}
+		return false;
 	}
-	
+
+
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		StringBuilder result = new StringBuilder();
+		result.append(nesteLedig).append("\n");
+
+		for (int i = 0; i < nesteLedig; i++) {
+			result.append(innleggsTabell[i].toString());
+		}
+
+		return result.toString();
 	}
 
 	// valgfrie oppgaver nedenfor

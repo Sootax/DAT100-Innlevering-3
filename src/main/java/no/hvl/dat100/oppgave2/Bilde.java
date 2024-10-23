@@ -25,7 +25,7 @@ public class Bilde extends Tekst {
 
 	@Override
 	public String toString() {
-		return String.format("%d\n%s\n%s\n%d\n%s\n", getId(), getBruker(), getDato(), getLikes(), url);
+		return String.format("BILDE\n%d\n%s\n%s\n%d\net bilde\n%s\n", getId(), getBruker(), getDato(), getLikes(), url);
 	}
 
 	// Metoden nedenfor er kun for valgfri oppgave 6

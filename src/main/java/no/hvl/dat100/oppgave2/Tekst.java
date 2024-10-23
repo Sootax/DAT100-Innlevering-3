@@ -28,7 +28,7 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		return String.format("%d\n%s\n%s\n%d\n%s\n", getId(), getBruker(), getDato(), getLikes(), tekst);
+		return String.format("TEKST\n%d\n%s\n%s\n%d\n%s\n", getId(), getBruker(), getDato(), getLikes(), tekst);
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
