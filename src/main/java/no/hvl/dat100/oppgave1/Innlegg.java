@@ -7,6 +7,10 @@ public abstract class Innlegg {
 	String bruker;
 	String dato;
 	int likes;
+
+	public Innlegg() {
+
+	}
 	
 	public Innlegg(int id, String bruker, String dato) {
 		this.id = id;
