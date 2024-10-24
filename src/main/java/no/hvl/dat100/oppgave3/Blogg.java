@@ -4,10 +4,13 @@ import no.hvl.dat100.common.TODO;
 import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
-	private Innlegg[] innleggsTabell;
-	private int nesteLedig;
+	Innlegg[] innleggsTabell;
+	int nesteLedig;
 
-	public Blogg() {}
+	public Blogg() {
+		innleggsTabell = new Innlegg[5];
+		nesteLedig = 0;
+	}
 
 	public Blogg(int lengde) {
 		this.innleggsTabell = new Innlegg[lengde];
